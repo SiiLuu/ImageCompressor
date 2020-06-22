@@ -1,0 +1,68 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 4e8556c383de18d39328b26b2f085be77e78151ed6480de3009d59fd6704ca22
+
+name:           Compressor
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/Compressor#readme>
+homepage:       https://github.com/githubuser/Compressor#readme
+bug-reports:    https://github.com/githubuser/Compressor/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2020 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/Compressor
+
+library
+  exposed-modules:
+      ErrorHandling
+      Parser
+      Euclidean
+      Tool
+  other-modules:
+      Paths_Compressor
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+      , random
+      , directory
+  default-language: Haskell2010
+
+executable Compressor-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_Compressor
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      Compressor
+    , base >=4.7 && <5
+    , directory
+  default-language: Haskell2010
+
+test-suite Compressor-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_Compressor
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      Compressor
+    , base >=4.7 && <5
+  default-language: Haskell2010
